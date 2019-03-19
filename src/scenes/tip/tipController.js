@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { View, BackHandler, Linking } from 'react-native';
 import services from '../../services';
 import Palette from '../../common/palette';
+import { AdMobInterstitial } from 'react-native-admob';
+
 import {
   PackingTips,
   BehaviourTips,
@@ -140,6 +142,7 @@ class TipController extends BaseScene {
   }
 
   componentDidMount () {
+    AdMobInterstitial.showAd();
     this.setState({externalData: true});
   }
 

@@ -11,6 +11,7 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.soloader.SoLoader;
 import com.horcrux.svg.SvgPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import com.sbugert.rnadmob.RNAdMobPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +34,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
           new SvgPackage(),
-          new RNI18nPackage()
+          new RNI18nPackage(),
+          new RNAdMobPackage()
       );
     }
 
