@@ -1,0 +1,20 @@
+export default [
+  {'title': '21. Get vaccinated',
+    'data': ['Because falling prey to an illness in a foreign country is not fun — and many countries require you to get vaccinated in order to visit them so, regardless of your opinion on the subject, you just might have to.']},
+  {'title': '22. Learn to haggle',
+    'data': ['Haggling is a fun, playful way of not getting charged the foreigner price. It’s the art of negotiating and one that will help you throughout all of life, not just at the market.']},
+  {'title': '23. Get travel insurance',
+    'data': ['Travel insurance is the most important thing you get that you never want to use. If something goes wrong, you don’t want to be out thousands of dollars in bills. It will be there if you get robbed, flights get cancelled, you get sick or injured, or have to be sent home. It’s comprehensive and, for just a few dollars a day, one of the best investments you can get for a trip. You may think you’re superman/woman but so did my friend who broke her arm, didn’t have insurance, and had to pay thousands out of pocket. Insurance was there when I had to replace my camera and when I popped an eardrum scuba diving! Get it! Here are some tips on how to find the best travel insurance.']},
+  {'title': '24. Don’t overplan your trip',
+    'data': ['Let your days unfold naturally. Schedule two or three things and let the day fill in the rest on its own. It’s less stressful, and letting the day just take you is one of the best ways to travel. Here’s my advice on how not to overplan your travels!']},
+  {'title': '25. Book your tickets online',
+    'data': ['If you’re planning to do any activities or excursions on your trip, book them online. Companies usually offer a discounted price when compared to buying in person. Not only that but you’ll be able to pay with a credit card, giving you some extra protection as well as more travel points!']},
+  {'title': '26. Pre-book your tickets to attractions.',
+    'data': ['Many major attractions allow you to reserve your spot and skip the line. Always look online to see if this is an option. This will you to avoid wasting time in multi-hour lines and go right in. I’ve seen people wait hours for the Paris Catacombs, Louvre, London Churchill War Rooms, churches, temples, historic fortresses, and more. Pre-book the day before, skip the line, get to see more during your day!']},
+  {'title': '27. Let Someone at Home Know Your Plans',
+    'data': ['This is extremely important when traveling solo, but it’s still a good idea no matter how many people are in your travel group.']},
+  {'title': 'Passport. Check your passport’s expiration date',
+    'data': ['You won’t be able to travel if you have less than six months’ validity on your passport! Friends of mine have been turned around at the airport because they didn’t realise their passport was expiring soon.']},
+  {'title': 'Documents. Make Photocopies of Important Documents',
+    'data': ['Make Photocopies of Important Documents. Just in case, you never know when you can loose some Documents and you need to have copies.']}
+];
