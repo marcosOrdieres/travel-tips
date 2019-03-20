@@ -15,11 +15,11 @@ class DestinationController extends BaseScene {
       latitude: '',
       longitude: ''
     };
-    this.chargeAd();
   }
 
   componentDidMount () {
     this.setState({externalData: true});
+    this.chargeAd();
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       this.chargeAd();
       this.navigateTo('Destination'); // works best when the goBack is async

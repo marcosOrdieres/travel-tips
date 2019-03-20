@@ -36,7 +36,7 @@ export default class TipViewComponent extends Component {
         <TouchableOpacity
           onPress={this.props.onPressTip}
           style={localStyles.touchableStyle}>
-          <ImageBackground imageStyle={{ borderRadius: 10 }} source={this.props.tipImageSource} style={localStyles.imageBack}>
+          <ImageBackground imageStyle={{ borderRadius: 10 }} source={{uri: this.props.tipImageSource}} style={localStyles.imageBack}>
             <Text style={[{color: this.props.colorTipText ? 'black' : 'white'}, localStyles.textBack]}>{this.props.tipTitle}</Text>
           </ImageBackground>
         </TouchableOpacity>

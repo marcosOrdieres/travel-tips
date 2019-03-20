@@ -6,13 +6,13 @@ import { ListItem, TipView } from 'components';
 import Palette from '../../common/palette';
 import env from '../../config/env';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import backgroundTips from '../../assets/images/backgroundTips.png';
+import {AdMobBanner} from 'react-native-admob';
 
 const {width, height} = Dimensions.get('window');
 
 export default (controller) => (
   <View style={{flex: 1}}>
-    <ImageBackground source={controller.chargeImageBackgroundDataTip()} style={{flex: 0.15, justifyContent: 'center', alignItems: 'center'}}>
+    <ImageBackground source={{uri: controller.chargeImageBackgroundDataTip()}} style={{flex: 0.15, justifyContent: 'center', alignItems: 'center'}}>
       <Text style={{fontFamily: 'Calibri', fontSize: 30, fontWeight: 'bold', textAlign: 'center',
         color: controller.user.getTipType() === 'Before travel' ||
           controller.user.getTipType() === 'First aids' ||
@@ -53,5 +53,21 @@ export default (controller) => (
         sections={controller.chargeDataTip()}
         stickySectionHeadersEnabled />
     </View>
+    {controller.user.getTipType() === 'Behaviour' ||
+      controller.user.getTipType() === 'For Females' ||
+      controller.user.getTipType() === 'Money' ||
+      controller.user.getTipType() === 'Destination' ||
+      controller.user.getTipType() === 'For my phone' ?
+        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+          <AdMobBanner
+            adSize='banner'
+            adUnitID='ca-app-pub-9901220615892956/3077702011'
+            testDevices={[AdMobBanner.simulatorId]}
+            onAdFailedToLoad={error => console.warn('ERROR IN THE BANNDER AD:', error)}
+          />
+        </View>
+    :
+      null
+    }
   </View>
 );

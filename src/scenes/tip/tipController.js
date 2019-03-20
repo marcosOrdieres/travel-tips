@@ -22,23 +22,6 @@ import {
   ForMyPhoneTips
 } from 'helper';
 
-// import backgroundTips from '../../assets/images/backgroundTips.png';
-import backgroundPack from '../../assets/images/backgroundTitle/packBackground.png';
-import backgroundBeforeTravel from '../../assets/images/backgroundTitle/beforeTravelBack.png';
-import backgroundBehaviour from '../../assets/images/backgroundTitle/behaviourBack.png';
-
-import backgroundTransport from '../../assets/images/backgroundTitle/transportBack.png';
-import backgroundFirstAids from '../../assets/images/backgroundTitle/firstAidsBack.png';
-import backgroundDestination from '../../assets/images/backgroundTitle/destinationBack.png';
-
-import backgroundMoney from '../../assets/images/backgroundTitle/moneyBack.png';
-import backgroundEnvironment from '../../assets/images/backgroundTitle/environmentBack.png';
-import backgroundFemales from '../../assets/images/backgroundTitle/femaleBack.png';
-
-import backgroundFood from '../../assets/images/backgroundTitle/foodBack.png';
-import backgroundHotel from '../../assets/images/backgroundTitle/hotelBack.png';
-import backgroundPhone from '../../assets/images/backgroundTitle/phoneBack.png';
-
 class TipController extends BaseScene {
   constructor (args) {
     super(args);
@@ -98,43 +81,43 @@ class TipController extends BaseScene {
   chargeImageBackgroundDataTip () {
     switch (this.user.getTipType()) {
       case 'Packing':
-        return backgroundPack;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/packBackground.png?alt=media&token=51bf448f-a8aa-4e4b-8f91-dd1df5bdda15';
         break;
       case 'Behaviour':
-        return backgroundBehaviour;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/behaviourBack.png?alt=media&token=57eebd0b-d01e-43f4-8d2e-39fe4e51e7d7';
         break;
       case 'Before travel':
-        return backgroundBeforeTravel;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/beforeTravelBack.png?alt=media&token=387e9b84-184e-4180-8ace-cb469f4bd3ff';
         break;
 
       case 'Transport':
-        return backgroundTransport;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/transportBack.png?alt=media&token=6c0f8139-cd3b-4716-8fc0-dc4dffafeef9';
         break;
       case 'First aids':
-        return backgroundFirstAids;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/firstAidsBack.png?alt=media&token=87165dc1-9cfe-4597-9c2a-4a271bab28fc';
         break;
       case 'Destination':
-        return backgroundDestination;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/destinationBack.png?alt=media&token=cb5f076f-8a5b-4693-b941-d1738a2d2910';
         break;
 
       case 'Money':
-        return backgroundMoney;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/moneyBack.png?alt=media&token=40889e7e-1bfb-4b9b-a360-52378fe35573';
         break;
       case 'Environment':
-        return backgroundEnvironment;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/environmentBack.png?alt=media&token=319da642-4f63-4776-8f00-17acf2c34278';
         break;
       case 'For Females':
-        return backgroundFemales;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/femaleBack.png?alt=media&token=b9144ec5-1481-455e-82ca-f068958a3a03';
         break;
 
       case 'Food and drink':
-        return backgroundFood;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/foodBack.png?alt=media&token=cf8e1487-61f9-48af-93e6-ef4ce0b9a884';
         break;
       case 'Hotel':
-        return backgroundHotel;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/hotelBack.png?alt=media&token=abcc6654-0bae-4461-a15a-0525cf1c4374';
         break;
       case 'For my phone':
-        return backgroundPhone;
+        return 'https://firebasestorage.googleapis.com/v0/b/traveltip-2ed4e.appspot.com/o/phoneBack.png?alt=media&token=c74d0474-b3d4-4333-b0a4-a88edc06d790';
         break;
       default:
 
@@ -142,8 +125,17 @@ class TipController extends BaseScene {
   }
 
   componentDidMount () {
-    AdMobInterstitial.showAd();
+    this.user.setCounterForAd(1);
+    this.showAdEvenClick();
     this.setState({externalData: true});
+  }
+
+  showAdEvenClick () {
+    if (this.user.getCounterForAd() % 2) {
+      AdMobInterstitial.showAd();
+    } else {
+      console.warn('do not show the ad');
+    }
   }
 
   render () {

@@ -2,6 +2,7 @@ export default class User {
     static instance = this.instance == null ? new User() : this.instance;
     static userId;
     static tipType;
+    static counterForAd;
 
     getUserId() {
       return this.userId;
@@ -19,11 +20,24 @@ export default class User {
       this.tipType = value;
     }
 
+    getCounterForAd() {
+      return this.counterForAd;
+    }
+
+    setCounterForAd(value) {
+      if(!this.getCounterForAd()){
+        this.counterForAd = value;
+      } else{
+        this.counterForAd = this.getCounterForAd() + value;
+      }
+    }
+
 
     getUserObject() {
       const user = {
         userId: parseInt(this.userId),
-        tipType: this.tipType
+        tipType: this.tipType,
+        counterForAd: parseInt(this.counterForAd)
       };
 
       return user;
@@ -32,5 +46,6 @@ export default class User {
     reset(){
       this.userId = undefined;
       this.tipType = undefined;
+      this.counterForAd = undefined;
     }
 }

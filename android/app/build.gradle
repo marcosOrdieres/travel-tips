@@ -103,8 +103,8 @@ android {
         applicationId "com.marcos.travelTip"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 10
-        versionName "1.0.10"
+        versionCode 3
+        versionName "1.0.2"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -121,10 +121,19 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+    release {
+        storeFile file('marcosOrdi.keystore')
+        storePassword 'marcos'
+        keyAlias 'marcosOrdi'
+        keyPassword 'marcos'
+    }
+}
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
