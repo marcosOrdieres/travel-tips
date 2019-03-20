@@ -1,10 +1,6 @@
 import env from '../config/env.json';
 
 export default class RequestService {
-  constructor (storageService) {
-    this.storageService = storageService;
-  }
-
   get (url, options) {
     return this.__request('GET', url, options);
   }

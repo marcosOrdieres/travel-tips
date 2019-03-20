@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Dimensions, ImageBackground, SectionList, Platform, Linking } from 'react-native';
 import tipStyles from './tipStyles';
-import MapView from 'react-native-maps';
 import { ListItem, TipView } from 'components';
 import Palette from '../../common/palette';
 import env from '../../config/env';
